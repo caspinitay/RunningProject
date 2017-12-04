@@ -1,0 +1,5 @@
+{ "type": "Feature", "properties": { "osm_id": 11613589.000000, "type": "tertiary", "name": "Pine Street", "tunnel": 0, "bridge": 0, "oneway": 0, "ref": "CR 612", "z_order": 4.000000, "access": null, "service": null, "class": "highway" }, "geometry": { "type": "LineString", "coordinates": [ [ -74.785574603249074, 39.993119645545505 ], [ -74.783238063920436, 39.982355940766212 ] ] } },
+
+(.*)(type\\p{Punct}+\\s\\p{Punct}\\d+)(.*)(name\\p{Punct}+\\s\\p{Punct})([a-zA-Z]+(\\s[a-zA-Z]+)*)(.*)(coordinates)(.*)(-\\d+\\p{Punct}\\d+)(.*)(\\d+\\p{Punct}\\d+)(.*)(-\\d+\\p{Punct}\\d+)(.*)(\\d+\\p{Punct}\\d+)
+
+"type": "tertiary"
