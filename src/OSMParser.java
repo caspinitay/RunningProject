@@ -17,10 +17,13 @@ public class OSMParser {
 	public static List<String> roadNames = new LinkedList<String>();
 	
 	/**
-	 * Create new OSMParser object, set up file parsing
+	 * Create new OSMParser object from a .geojson file, set up file parsing
 	 * @param filename name of file to parse
 	 */
 	public OSMParser(String filename) throws IOException {
+		if (filename == null || !filename.endsWith(".geojson")) {
+			throw new IllegalArgumentException();
+		}
 		
 		this.reader = new BufferedReader(new FileReader(filename)) ;
 		
