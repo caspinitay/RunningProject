@@ -87,16 +87,27 @@ public class OSMParser {
 	 */
 	public Road parseRoad(String roadStr) throws IOException {
 		
+		// Name regular expression
 		String nameReg = "([0-9]+[a-z]+)*([a-zA-Z]+)*((\\s[a-zA-Z]+)|(\\s[0-9]+[a-z]+))*";
 		Pattern pName = Pattern.compile("([name]{4})(\\p{Punct}{2}\\s\\p{Punct})(" + nameReg + ")");
 		Matcher mName = pName.matcher(roadStr);
 		
+		// Points regular expression
+		String coorReg = "(\\p{Punct}[";
+		Pattern pPoints = Pattern.compile("([coordinates]{11})(\\p{Punct}|\\s)+" + coorReg);
+		
+		String name;
+		double lat1;
+		double long1;
+		double lat2;
+		double long2;
+		
 		boolean foundName = mName.find();
 		if (foundName && !(mName.group(3) == null)) {
-			roadNames.add(mName.group(3));
-		} else {
-			return null;
+			System.out.println(mName.group(3));
 		}
+		
+		
 		return null;
 	}
 	

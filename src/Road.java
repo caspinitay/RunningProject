@@ -2,10 +2,11 @@
 public class Road extends Edge {
 	private Point a;
 	private Point b;
+	private String name;
 
-	public Road(int u, int v, int weight) {
-		super(u, v, weight);
-		// TODO Auto-generated constructor stub
+	public Road(Point u, Point v, int weight, String name) {
+		super(u.getID(), v.getID(), weight);
+		this.name = name;
 	}
 		
 
